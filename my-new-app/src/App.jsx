@@ -10,7 +10,7 @@ function App() {
       name: "mew",
     },
   ];
-  let pokemon = pokemonList[1];
+  let pokemon = pokemonList[0];
 
   return (
     <div>
