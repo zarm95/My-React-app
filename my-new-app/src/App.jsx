@@ -1,4 +1,5 @@
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/NavBar";
 import { useState } from "react";
 
 function App() {
@@ -29,7 +30,6 @@ function App() {
   ];
   const [pokemonIndex, setPokemonIndex] = useState(0);
   let pokemon = pokemonList[pokemonIndex];
-
   const hendleSuivant = () => {
     if (pokemonIndex >= pokemonList.length - 1) {
       alert("index superieur");
@@ -47,8 +47,7 @@ function App() {
 
   return (
     <div>
-      <button onClick={hendleSuivant}>suivant </button>
-      <button onClick={hendlePrecedent}>Precedent</button>
+      <NavBar hendlePrecedent={hendlePrecedent} hendleSuivant={hendleSuivant} />
       <PokemonCard pokemon={pokemon} />
     </div>
   );

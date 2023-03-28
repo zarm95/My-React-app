@@ -13,7 +13,7 @@ const PokemonCard = (poke) => {
     </figure>
   );
 };
-PokemonCard.prototype = {
+PokemonCard.protoTypes = {
   poke: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
