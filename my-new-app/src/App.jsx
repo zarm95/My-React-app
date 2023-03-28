@@ -30,27 +30,18 @@ function App() {
   ];
   const [pokemonIndex, setPokemonIndex] = useState(0);
   let pokemon = pokemonList[pokemonIndex];
-  const hendleSuivant = () => {
-    if (pokemonIndex >= pokemonList.length - 1) {
-      alert("index superieur");
-    } else {
-      setPokemonIndex(pokemonIndex + 1);
-    }
-  };
-  const hendlePrecedent = () => {
-    if (pokemonIndex <= 0) {
-      alert("index inferieur");
-    } else {
-      setPokemonIndex(pokemonIndex - 1);
-    }
-  };
 
   return (
     <div>
-      <NavBar hendlePrecedent={hendlePrecedent} hendleSuivant={hendleSuivant} />
+      <NavBar
+        pokemonList={pokemonList}
+        pokemonIndex={pokemonIndex}
+        setPokemonIndex={setPokemonIndex}
+      />
       <PokemonCard pokemon={pokemon} />
     </div>
   );
 }
 
 export default App;
+
