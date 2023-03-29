@@ -1,6 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const pokemonList = [
@@ -28,26 +28,22 @@ function App() {
       name: "mew",
     },
   ];
+  useEffect(() => {
+    alert("hello pokemon trainer");
+  }, []);
   const [pokemonIndex, setPokemonIndex] = useState(0);
   let pokemon = pokemonList[pokemonIndex];
-  const hendleSuivant = () => {
-    if (pokemonIndex >= pokemonList.length - 1) {
-      alert("index superieur");
-    } else {
-      setPokemonIndex(pokemonIndex + 1);
-    }
-  };
-  const hendlePrecedent = () => {
-    if (pokemonIndex <= 0) {
-      alert("index inferieur");
-    } else {
-      setPokemonIndex(pokemonIndex - 1);
-    }
-  };
+  if (pokemon.name === "pikachu") {
+    alert("pik pikachu !!! ");
+  }
 
   return (
     <div>
-      <NavBar hendlePrecedent={hendlePrecedent} hendleSuivant={hendleSuivant} />
+      <NavBar
+        pokemonList={pokemonList}
+        pokemonIndex={pokemonIndex}
+        setPokemonIndex={setPokemonIndex}
+      />
       <PokemonCard pokemon={pokemon} />
     </div>
   );
