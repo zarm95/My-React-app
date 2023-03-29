@@ -13,13 +13,11 @@ const PokemonCard = (poke) => {
     </figure>
   );
 };
-PokemonCard.protoTypes = {
-  poke: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      imgSrc: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+ PokemonCard.propTypes = {
+  poke: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default PokemonCard;
